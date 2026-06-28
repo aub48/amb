@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrated Real Time Communication & Notification System</title>
+  <meta name="description" content="Integrated Real Time Communication & Notification System For Ambulance, Health Care, Facilities & Traffic Management Embeded System" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-card">
+      <div class="badge">Emergency Response • Traffic Support • Health Care</div>
+
+      <h1>
+        <span>Project Name</span>
+        Integrated Real Time Communication & Notification System For Ambulance, Health Care, Facilities & Traffic Management Embeded System
+      </h1>
+
+      <p class="subtitle">
+        জরুরি অ্যাম্বুলেন্স সেবা, স্বাস্থ্যসেবা সুবিধা এবং ট্রাফিক ম্যানেজমেন্টের জন্য দ্রুত যোগাযোগ ও নোটিফিকেশন সিস্টেম।
+      </p>
+
+      <div class="action-grid">
+        <button id="startJourneyBtn" class="primary-btn" type="button">
+          <span class="btn-icon">🚑</span>
+          যাত্রা শুরু করুন
+        </button>
+
+        <div id="locationStatus" class="status-box">
+          লোকেশন নেওয়ার জন্য “যাত্রা শুরু করুন” বাটনে ক্লিক করুন।
+        </div>
+
+        <label class="input-group" for="hospitalName">
+          <span>হাসপাতাল / ক্লিনিক</span>
+          <input id="hospitalName" type="text" placeholder="হাসপাতাল/ক্লিনিকের নাম লিখুন" autocomplete="organization" />
+        </label>
+
+        <label class="input-group" for="idNumber">
+          <span>আইডি নাম্বার</span>
+          <input id="idNumber" type="text" placeholder="আইডি নাম্বার দিন" inputmode="numeric" autocomplete="off" />
+        </label>
+
+        <button id="confirmBtn" class="confirm-btn" type="button">Confirm Button</button>
+        <p id="messageBox" class="message-box" aria-live="polite"></p>
+
+        <button id="trafficBtn" class="secondary-btn" type="button">
+          নিকটস্থ ট্রাফিক যোগাযোগ
+        </button>
+      </div>
+
+      <section id="trafficSection" class="traffic-section" hidden>
+        <div class="section-heading">
+          <h2>নিকটস্থ ট্রাফিক যোগাযোগ তালিকা</h2>
+          <p>জরুরি প্রয়োজনে নিচের দায়িত্বপ্রাপ্ত সার্জেন্টদের সাথে যোগাযোগ করুন।</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ক্রমিক</th>
+                <th>নাম</th>
+                <th>পদবি</th>
+                <th>লোকেশন</th>
+                <th>যোগাযোগ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="ক্রমিক">০১</td>
+                <td data-label="নাম">মাহবুব হাসান</td>
+                <td data-label="পদবি">সার্জেন্ট</td>
+                <td data-label="লোকেশন">উত্তরা উত্তর</td>
+                <td data-label="যোগাযোগ"><a href="tel:01853363434">01853363434</a></td>
+              </tr>
+              <tr>
+                <td data-label="ক্রমিক">০২</td>
+                <td data-label="নাম">আশিষ ঘরামী</td>
+                <td data-label="পদবি">সার্জেন্ট</td>
+                <td data-label="লোকেশন">মিরপুর</td>
+                <td data-label="যোগাযোগ"><a href="tel:01307059567">013 0705 9567</a></td>
+              </tr>
+              <tr>
+                <td data-label="ক্রমিক">০৩</td>
+                <td data-label="নাম">তুষার দেবনাথ</td>
+                <td data-label="পদবি">সার্জেন্ট</td>
+                <td data-label="লোকেশন">পল্লবী</td>
+                <td data-label="যোগাযোগ"><a href="tel:01516527690">01516527690</a></td>
+              </tr>
+              <tr>
+                <td data-label="ক্রমিক">০৪</td>
+                <td data-label="নাম">মেহেদী হাসান</td>
+                <td data-label="পদবি">সার্জেন্ট</td>
+                <td data-label="লোকেশন">মোহাম্মদপুর</td>
+                <td data-label="যোগাযোগ"><a href="tel:01644073205">016 4407 3205</a></td>
+              </tr>
+              <tr>
+                <td data-label="ক্রমিক">০৫</td>
+                <td data-label="নাম">নুসরাত মৌরিন তিশা</td>
+                <td data-label="পদবি">সার্জেন্ট</td>
+                <td data-label="লোকেশন">ফার্মগেট</td>
+                <td data-label="যোগাযোগ"><a href="tel:01729176979">01729176979</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="project-footer">
+        <p class="footer-title">Project Members</p>
+        <div class="member-list">
+          <span>আশিষ ঘরামী</span>
+          <span>মো: মেহেদী হাসান</span>
+          <span>তামান্না সিদ্দীকা</span>
+          <span>তুষার দেবনাথ</span>
+          <span>নুসরাত মৌরিন তিশা</span>
+        </div>
+
+        <div class="university-info">
+          <strong>Asian University of Bangladesh</strong>
+          <span>Computer Science and Engineering</span>
+          <span>Batch- 69 (B)</span>
+          <span>Thesis Reg Nu:- CSE 4840</span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
