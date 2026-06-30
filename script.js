@@ -9,82 +9,32 @@ const messageBox = document.getElementById("messageBox");
 const trafficBtn = document.getElementById("trafficBtn");
 const trafficSection = document.getElementById("trafficSection");
 
-let userLocation = null;
-
-function setStatus(element, text, type = "") {
-  element.textContent = text;
-  element.className = element === locationStatus ? "status-box" : "message-box";
-  if (type) element.classList.add(type);
+function setStatus(el, text){
+  el.textContent = text;
 }
 
 startJourneyBtn.addEventListener("click", () => {
-  messageBox.textContent = "";
-
-  if (!navigator.geolocation) {
-    setStatus(locationStatus, "আপনার ব্রাউজারে লোকেশন সাপোর্ট নেই।", "error");
+  if(!navigator.geolocation){
+    setStatus(locationStatus,"No location support");
     return;
   }
 
-  setStatus(locationStatus, "লোকেশন নেওয়া হচ্ছে... ব্রাউজারের permission Allow করুন।", "warning");
-
-  navigator.geolocation.getCurrentPosition(
-    (position) => {
-      userLocation = {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-        accuracy: position.coords.accuracy
-      };
-
-      setStatus(
-        locationStatus,
-        `লোকেশন নেওয়া হয়েছে। Latitude: ${userLocation.latitude.toFixed(5)}, Longitude: ${userLocation.longitude.toFixed(5)}`,
-        "success"
-      );
-    },
-    (error) => {
-      let text = "লোকেশন নেওয়া যায়নি। আবার চেষ্টা করুন।";
-      if (error.code === error.PERMISSION_DENIED) {
-        text = "লোকেশন permission বন্ধ করা হয়েছে। ব্রাউজার থেকে Allow করে আবার চেষ্টা করুন।";
-      }
-      setStatus(locationStatus, text, "error");
-    },
-    {
-      enableHighAccuracy: true,
-      timeout: 12000,
-      maximumAge: 0
-    }
-  );
+  navigator.geolocation.getCurrentPosition(pos=>{
+    setStatus(locationStatus,"Location captured");
+  }, err=>{
+    setStatus(locationStatus,"Location failed");
+  });
 });
 
 confirmBtn.addEventListener("click", () => {
-  const givenId = idNumber.value.trim();
-
-  if (givenId === VALID_ID) {
-    setStatus(messageBox, "আইডি কনফার্ম হয়েছে। ম্যাপে নিয়ে যাওয়া হচ্ছে...", "success");
-    setTimeout(() => {
-      window.location.href = MAP_URL;
-    }, 700);
+  if(idNumber.value.trim() === VALID_ID){
+    messageBox.textContent = "OK";
+    window.location.href = MAP_URL;
   } else {
-    setStatus(messageBox, "আপনি রেজিস্ট্রারড নন", "error");
-    idNumber.focus();
-  }
-});
-
-idNumber.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    confirmBtn.click();
+    messageBox.textContent = "আপনি রেজিস্ট্রারড নন";
   }
 });
 
 trafficBtn.addEventListener("click", () => {
-  const isHidden = trafficSection.hasAttribute("hidden");
-
-  if (isHidden) {
-    trafficSection.removeAttribute("hidden");
-    trafficBtn.textContent = "নিকটস্থ ট্রাফিক তালিকা বন্ধ করুন";
-    trafficSection.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  } else {
-    trafficSection.setAttribute("hidden", "");
-    trafficBtn.textContent = "নিকটস্থ ট্রাফিক যোগাযোগ";
-  }
+  trafficSection.hidden = !trafficSection.hidden;
 });
