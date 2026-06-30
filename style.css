@@ -1,89 +1,60 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b1220;
+color:white;
 }
 
-:root {
-  --bg: #05070b;
-  --card: rgba(8, 13, 23, 0.82);
-  --card-strong: rgba(12, 19, 33, 0.94);
-  --text: #f6f8ff;
-  --muted: #aeb8ca;
-  --line: rgba(255, 255, 255, 0.12);
-  --accent: #22d3ee;
-  --accent-2: #38bdf8;
-  --danger: #fb7185;
-  --success: #34d399;
-  --warning: #fbbf24;
+.wrap{
+max-width:900px;
+margin:auto;
+padding:40px;
 }
 
-body {
-  min-height: 100vh;
-  font-family: "Noto Sans Bengali", "Hind Siliguri", "Segoe UI", Arial, sans-serif;
-  color: var(--text);
-  background:
-    linear-gradient(125deg, rgba(3, 7, 18, 0.94), rgba(4, 10, 25, 0.82), rgba(2, 6, 23, 0.94)),
-    url("assets/ambulance-bg.svg") center / cover fixed no-repeat,
-    var(--bg);
+h1{
+font-size:40px;
 }
 
-.page-shell {
-  width: min(1180px, 94%);
-  margin: 0 auto;
-  padding: 46px 0;
+.btn{
+display:block;
+width:100%;
+padding:15px;
+margin:10px 0;
+border-radius:12px;
+border:none;
+font-size:16px;
+cursor:pointer;
 }
 
-.hero-card {
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  padding: 40px;
-  background: rgba(8,13,23,0.82);
+.primary{background:#22d3ee;}
+.secondary{background:#38bdf8;}
+.success{background:#34d399;}
+
+.form{
+margin-top:20px;
+padding:20px;
+background:rgba(255,255,255,0.05);
+border-radius:12px;
 }
 
-.badge { color:#22d3ee; font-weight:700; }
-
-h1 { font-size: 2.5rem; margin-top: 20px; }
-
-.subtitle { color: var(--muted); margin-top: 15px; }
-
-.action-grid {
-  display:grid;
-  gap:15px;
-  margin-top:25px;
+label{
+display:block;
+margin-top:10px;
+margin-bottom:5px;
+color:#cbd5e1;
 }
 
-.primary-btn, .confirm-btn, .secondary-btn {
-  padding: 14px;
-  border-radius: 14px;
-  font-weight: 700;
-  cursor: pointer;
+input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #334155;
+background:#0f172a;
+color:white;
+outline:none;
 }
 
-.primary-btn { background:#22d3ee; }
-.confirm-btn { background:#34d399; }
-.secondary-btn { background:#333; color:#fff; }
-
-.status-box, .message-box {
-  padding:12px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  color:var(--muted);
-}
-
-table {
-  width:100%;
-  margin-top:20px;
-  border-collapse: collapse;
-}
-
-td, th {
-  border:1px solid #333;
-  padding:10px;
-  color:#fff;
-}
-
-footer {
-  margin-top:30px;
-  color:#aaa;
+input::placeholder{
+color:#94a3b8;
 }

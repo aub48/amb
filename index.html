@@ -7,67 +7,26 @@
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<main class="page-shell">
-<div class="hero-card">
+<div class="wrap">
 
-<div class="badge">Emergency System</div>
+<h1>AmbuTrack</h1>
+<p>Emergency System</p>
 
-<h1>
-<span>Project Name</span>
-AmbuTrack
-</h1>
+<button class="btn primary">যাত্রা শুরু করুন</button>
+<button class="btn secondary">রোগীর তথ্য দিন</button>
 
-<p class="subtitle">
-Emergency Ambulance & Traffic System
-</p>
+<div class="form">
 
-<div class="action-grid">
+<label>হাসপাতাল/ক্লিনিক</label>
+<input type="text" placeholder="হাসপাতাল/ক্লিনিক নাম লিখুন"/>
 
-<button id="startJourneyBtn" class="primary-btn">যাত্রা শুরু করুন</button>
+<label>আইডি নাম্বার</label>
+<input type="text" placeholder="আইডি নাম্বার দিন"/>
 
-<a class="primary-btn" href="https://forms.gle/tWH1UhRxzUYhkpUR8" target="_blank" style="text-align:center;text-decoration:none;">
-রোগীর তথ্য দিন
-</a>
-
-<div id="locationStatus" class="status-box"></div>
-
-<input id="hospitalName" placeholder="হাসপাতাল/ক্লিনিক"/>
-
-<input id="idNumber" placeholder="আইডি নাম্বার দিন"/>
-
-<button id="confirmBtn" class="confirm-btn">নিশ্চিত করুন</button>
-
-<p id="messageBox" class="message-box"></p>
-
-<button id="trafficBtn" class="secondary-btn">নিকটস্থ ট্রাফিক যোগাযোগ</button>
+<button class="btn success">নিশ্চিত করুন</button>
 
 </div>
 
-<section id="trafficSection" hidden>
-<table>
-<tr><th>Name</th><th>Position</th><th>Location</th><th>Contact</th></tr>
-<tr><td>Ashish Gharami</td><td>Sergeant</td><td>Mirpur</td><td>01307059567</td></tr>
-<tr><td>Md. Mehedi Hasan</td><td>Sergeant</td><td>Mohammadpur</td><td>01644073205</td></tr>
-<tr><td>Tuser Debnath</td><td>Sergeant</td><td>Pallabi</td><td>01516527690</td></tr>
-<tr><td>Tamanna Siddiqua</td><td>Sergeant</td><td>Farmgate</td><td>01729176979</td></tr>
-<tr><td>Nusrat Mourin Tisha</td><td>Sergeant</td><td>Uttara</td><td>01853363434</td></tr>
-</table>
-</section>
-
-<footer>
-<p>Project Members</p>
-<ul>
-<li>Ashish Gharami</li>
-<li>Md. Mehedi Hasan</li>
-<li>Tuser Debnath</li>
-<li>Tamanna Siddiqua</li>
-<li>Nusrat Mourin Tisha</li>
-</ul>
-</footer>
-
 </div>
-</main>
-
-<script src="script.js"></script>
 </body>
 </html>
