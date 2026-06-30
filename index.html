@@ -7,26 +7,59 @@
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="wrap">
+
+<div class="container">
 
 <h1>AmbuTrack</h1>
 <p>Emergency System</p>
 
-<button class="btn primary">যাত্রা শুরু করুন</button>
-<button class="btn secondary">রোগীর তথ্য দিন</button>
+<button id="startBtn" class="btn primary">যাত্রা শুরু করুন</button>
+
+<a href="https://forms.gle/tWH1UhRxzUYhkpUR8" target="_blank" class="btn linkBtn">রোগীর তথ্য দিন</a>
 
 <div class="form">
-
 <label>হাসপাতাল/ক্লিনিক</label>
-<input type="text" placeholder="হাসপাতাল/ক্লিনিক নাম লিখুন"/>
+<input id="hospital" type="text" placeholder="হাসপাতাল/ক্লিনিক নাম লিখুন"/>
 
 <label>আইডি নাম্বার</label>
-<input type="text" placeholder="আইডি নাম্বার দিন"/>
+<input id="idBox" type="text" placeholder="আইডি নাম্বার দিন"/>
 
-<button class="btn success">নিশ্চিত করুন</button>
+<button id="confirmBtn" class="btn success">নিশ্চিত করুন</button>
+<p id="msg"></p>
+</div>
 
+<button id="trafficBtn" class="btn secondary">নিকটস্থ ট্রাফিক যোগাযোগ</button>
+
+<div id="traffic" class="traffic hidden">
+<table>
+<tr><th>নাম</th><th>পদবি</th><th>লোকেশন</th><th>যোগাযোগ</th></tr>
+<tr><td>Ashish Gharami</td><td>Sergeant</td><td>Mirpur</td><td>01307059567</td></tr>
+<tr><td>Md. Mehedi Hasan</td><td>Sergeant</td><td>Mohammadpur</td><td>01644073205</td></tr>
+<tr><td>Tuser Debnath</td><td>Sergeant</td><td>Pallabi</td><td>01516527690</td></tr>
+<tr><td>Tamanna Siddiqua</td><td>Sergeant</td><td>Farmgate</td><td>01729176979</td></tr>
+<tr><td>Nusrat Mourin Tisha</td><td>Sergeant</td><td>Uttara</td><td>01853363434</td></tr>
+</table>
+</div>
+
+<!-- PROJECT MEMBERS SECTION FIXED -->
+<div class="footer">
+<h3>Project Members</h3>
+<ul>
+<li>Ashish Gharami</li>
+<li>Md. Mehedi Hasan</li>
+<li>Tuser Debnath</li>
+<li>Tamanna Siddiqua</li>
+<li>Nusrat Mourin Tisha</li>
+</ul>
+
+<p>Asian University of Bangladesh</p>
+<p>Computer Science and Engineering</p>
+<p>Batch- 69 (B)</p>
+<p>Thesis Reg Nu:- CSE 4840</p>
 </div>
 
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
